@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>URL Shortener Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav>
+        <div class="navbar">
+            <button onclick="goToUrlShortner()">URL Shortener</button>
+        </div>
+    </nav>
+    <div class="container">
+        <h1>URL Shortener Dashboard</h1>
+
+        <!-- Dropdown to select operation -->
+        <label for="operation">Select Operation:</label>
+        <select id="operation" onchange="handleOperationChange()">
+            <option value="update">Update URL</option>
+            <option value="delete">Delete URL</option>
+            <option value="details">URL Details</option>
+            <option value="visitors">Get All Visitors</option>
+        </select>
+
+        <!-- Input field for short URL -->
+        <div id="shortUrlInput" style="display: none;">
+            <label for="shortUrl">Short URL:</label>
+            <input type="text" id="shortUrl">
+        </div>
+
+        <!-- Input field for expiry date (for update operation) -->
+        <div id="expiryDateInput" style="display: none;">
+            <label for="expiryDate">New Expiry Date:</label>
+            <input type="date" id="expiryDate">
+        </div>
+
+        <!-- Button to trigger the selected operation -->
+        <button onclick="performOperation()">Perform Operation</button>
+
+        <!-- Output area to display results -->
+        <div id="operationResult"></div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
